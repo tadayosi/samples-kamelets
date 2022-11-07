@@ -1,0 +1,26 @@
+apiVersion: camel.apache.org/v1alpha1
+kind: KameletBinding
+metadata:
+  name: wttrin-to-s3
+spec:
+  source:
+    ref:
+      kind: Kamelet
+      apiVersion: camel.apache.org/v1
+      name: wttrin-source
+    properties:
+      period: 10000
+      wttrLocation: Tokyo
+
+  sink:
+    ref:
+      kind: Kamelet
+      apiVersion: camel.apache.org/v1
+      name: aws-s3-sink
+    properties:
+      bucketNameOrArn: test
+      region: ap-east-1
+      accessKey: test
+      secretKey: test
+      overrideEndpoint: true
+      uriEndpointOverride: 'http://localhost:4566'
