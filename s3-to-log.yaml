@@ -15,6 +15,7 @@ spec:
       secretKey: test
       overrideEndpoint: true
       uriEndpointOverride: 'http://localhost:4566'
+      autoCreateBucket: true
 
   sink:
     ref:
