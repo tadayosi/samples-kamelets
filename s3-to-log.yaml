@@ -16,11 +16,19 @@ spec:
       overrideEndpoint: true
       uriEndpointOverride: 'http://localhost:4566'
       autoCreateBucket: true
-
+  steps:
+    - ref:
+        kind: Kamelet
+        apiVersion: camel.apache.org/v1
+        name: log-action
+      properties:
+        level: DEBUG
+        showHeaders: true
   sink:
     ref:
       kind: Kamelet
       apiVersion: camel.apache.org/v1
       name: log-sink
     properties:
+      level: DEBUG
       showHeaders: true
