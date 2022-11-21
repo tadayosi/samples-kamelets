@@ -1,0 +1,5 @@
+{
+  "weather": .weatherDesc[0].value,
+  "dateTime": .localObsDateTime,
+  "temperature": .temp_C
+}
